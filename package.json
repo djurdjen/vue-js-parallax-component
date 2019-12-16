@@ -1,0 +1,43 @@
+{
+  "name": "vue-js-parallax-component",
+  "version": "0.2.1",
+  "description": "",
+  "main": "dist/vue-parallax.umd.js",
+  "module": "dist/vue-parallax.esm.js",
+  "unpkg": "dist/vue-parallax.min.js",
+  "browser": {
+    "./sfc": "src/vue-parallax.vue"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/djurdjen/vue-js-parallax-component.git"
+  },
+  "homepage": "https://github.com/djurdjen/vue-js-parallax-component",
+  "keywords": [
+    "parallax",
+    "vue",
+    "javascript",
+    "component",
+    "simple"
+  ],
+  "scripts": {
+    "test": "vue serve --open src/test.vue",
+    "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-parallax.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/vue-parallax.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-parallax.min.js"
+  },
+  "devDependencies": {
+    "rollup": "^1.17.0",
+    "rollup-plugin-buble": "^0.19.8",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-vue": "^5.0.1",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "author": "Jurian Koning",
+  "license": "MIT",
+  "dependencies": {
+    "vue-runtime-helpers": "^1.1.2"
+  }
+}
